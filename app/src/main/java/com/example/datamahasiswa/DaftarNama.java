@@ -83,13 +83,13 @@ public class DaftarNama extends AppCompatActivity implements View.OnClickListene
                             break;
                         case 1:
                             Mahasiswa mahasiswa = new Mahasiswa ();
-                            FormTambah.ACTION = " Update";
                             mahasiswa.setNomor (currentMahasiwa.getNomor ());
                             mahasiswa.setNama (currentMahasiwa.getNama ());
                             mahasiswa.setTanggal (currentMahasiwa.getTanggal ());
                             mahasiswa.setJeniskelamin (currentMahasiwa.getJeniskelamin ());
                             mahasiswa.setAlamat (currentMahasiwa.getAlamat ());
                             Intent update = new Intent(DaftarNama.this, FormTambah.class);
+                            update.putExtra("Update","Update");
                             update.putExtra(FormTambah.EXTRA_PERSON,mahasiswa);
                             startActivity(update);
                             break;

@@ -5,10 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class FormTambah extends AppCompatActivity {
     public static String EXTRA_PERSON = " extra_person";
-    public static String ACTION = " Insert";
+    public static String ACTION = "Insert";
 
     EditText nomor,nama,alamat,jk,tanggal;
     @Override
@@ -22,9 +23,8 @@ public class FormTambah extends AppCompatActivity {
         jk = findViewById (R.id.et_jk);
         tanggal = findViewById (R.id.et_tanggal);
 
-        Mahasiswa mahasiswa = getIntent ().getParcelableExtra (EXTRA_PERSON);
-
-        if(!EXTRA_PERSON.equals (" Insert")){
+        if(getIntent().hasExtra("Update")) {
+            Mahasiswa mahasiswa = getIntent ().getParcelableExtra (EXTRA_PERSON);
             nomor.setText (mahasiswa.getNomor ()+"");
             nama.setText (mahasiswa.getNama ()+"");
             alamat.setText (mahasiswa.getAlamat ()+"");
@@ -33,13 +33,14 @@ public class FormTambah extends AppCompatActivity {
         }
 
 
+
     }
 
     public void simpanData(View view) {
         DatabaseHelper db = new DatabaseHelper(this);
         Mahasiswa currentMahasiswa = new Mahasiswa ();
 
-        if(ACTION.equals (" Insert")){
+        if(getIntent().hasExtra("Update")) {
             currentMahasiswa.setNomor(Integer.parseInt(nomor.getText().toString()));
             currentMahasiswa.setNama (nama.getText().toString ());
             currentMahasiswa.setAlamat (alamat.getText().toString ());

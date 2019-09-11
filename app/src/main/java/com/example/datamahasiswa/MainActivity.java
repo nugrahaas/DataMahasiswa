@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void inputData(View view) {
         Intent formTambah = new Intent(MainActivity.this, FormTambah.class);
+
         startActivity(formTambah);
     }
 
