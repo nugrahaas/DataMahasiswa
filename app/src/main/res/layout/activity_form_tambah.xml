@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     android:orientation="vertical"
-    android:layout_margin="20dp"
-
+    android:padding="20dp"
     android:background="@color/colorKrem"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -25,6 +24,7 @@
         <EditText
             android:id="@+id/et_nomor"
             android:inputType="number"
+            android:hint="Nomor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_create_black_24dp"
@@ -45,6 +45,7 @@
             />
         <EditText
             android:id="@+id/et_nama"
+            android:hint="Nama"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_group_black_24dp"
@@ -66,6 +67,7 @@
         <EditText
             android:id="@+id/et_tanggal"
             android:inputType="date"
+            android:hint="20/12/2001"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_date_range_black_24dp"
@@ -86,6 +88,7 @@
             />
         <EditText
             android:id="@+id/et_jk"
+            android:hint="L/P"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_person_black_24dp"
@@ -108,6 +111,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="Alamat"
             android:id="@+id/et_alamat"
             android:drawableLeft="@drawable/ic_place_black_24dp"
             />
