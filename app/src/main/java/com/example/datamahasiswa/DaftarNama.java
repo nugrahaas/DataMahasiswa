@@ -82,7 +82,6 @@ public class DaftarNama extends AppCompatActivity implements View.OnClickListene
                             startActivity(detail);
                             break;
                         case 1:
-                            String beda;
                             Mahasiswa mahasiswa = new Mahasiswa ();
                             FormTambah.ACTION = " Update";
                             mahasiswa.setNomor (currentMahasiwa.getNomor ());
