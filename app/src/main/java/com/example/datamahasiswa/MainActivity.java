@@ -17,4 +17,14 @@ public class MainActivity extends AppCompatActivity {
         Intent daftarNama = new Intent(MainActivity.this, DaftarNama.class);
         startActivity(daftarNama);
     }
+
+    public void inputData(View view) {
+        Intent formTambah = new Intent(MainActivity.this, FormTambah.class);
+        startActivity(formTambah);
+    }
+
+    public void informasi(View view) {
+        Intent info = new Intent(MainActivity.this, Informasi.class);
+        startActivity(info);
+    }
 }
