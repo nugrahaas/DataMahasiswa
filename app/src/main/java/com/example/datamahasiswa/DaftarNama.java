@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Parcelable;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -21,10 +22,33 @@ public class DaftarNama extends AppCompatActivity implements View.OnClickListene
     List<Mahasiswa> listMahasiswa;
     boolean test = true;
 
+    protected OnBackPressedListener onBackPressedListener;
+
+    public interface OnBackPressedListener {
+        void doBack();
+    }
+
+    public void setOnBackPressedListener(OnBackPressedListener onBackPressedListener) {
+        this.onBackPressedListener = onBackPressedListener;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (onBackPressedListener != null)
+            onBackPressedListener.doBack();
+        else
+            super.onBackPressed();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daftar_nama);
+
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setHomeButtonEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
 
         recyclerView = findViewById (R.id.recyclerView);

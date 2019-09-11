@@ -1,6 +1,7 @@
 package com.example.datamahasiswa;
 
 import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,11 +12,34 @@ public class FormTambah extends AppCompatActivity {
     public static String EXTRA_PERSON = " extra_person";
     public static String ACTION = "Insert";
 
+    protected OnBackPressedListener onBackPressedListener;
+
+    public interface OnBackPressedListener {
+        void doBack();
+    }
+
+    public void setOnBackPressedListener(OnBackPressedListener onBackPressedListener) {
+        this.onBackPressedListener = onBackPressedListener;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (onBackPressedListener != null)
+            onBackPressedListener.doBack();
+        else
+            super.onBackPressed();
+    }
+
     EditText nomor,nama,alamat,jk,tanggal;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form_tambah);
+
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setHomeButtonEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         nomor = findViewById (R.id.et_nomor);
         nama = findViewById (R.id.et_nama);

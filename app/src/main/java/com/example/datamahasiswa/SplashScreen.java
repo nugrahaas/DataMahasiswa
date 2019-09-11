@@ -13,12 +13,18 @@ public class SplashScreen extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
-        new Handler().postDelayed(new Runnable() {
-            @Override
+        Thread thread = new Thread(){
             public void run() {
-                Intent home = new Intent(SplashScreen.this, MainActivity.class);
-                startActivity(home);
+                try{
+                    sleep(3000);
+                } catch (InterruptedException e){
+                    e.printStackTrace();
+                } finally {
+                    startActivity(new Intent(SplashScreen.this, MainActivity.class));
+                    finish();
+                }
             }
-        }, waktu_loading);
+        };
+        thread.start();
     }
 }
