@@ -29,7 +29,6 @@
             android:text="Nomor"
             />
         <EditText
-            android:id="@+id/det_nomor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_create_black_24dp"
@@ -49,7 +48,6 @@
             android:text="Nama"
             />
         <EditText
-            android:id="@+id/det_nama"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_group_black_24dp"
@@ -69,9 +67,7 @@
             android:text="Tanggal Lahir"
             />
         <EditText
-            android:id="@+id/det_tanggal"
             android:layout_width="match_parent"
-            android:inputType="date"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_date_range_black_24dp"
             />
@@ -90,7 +86,6 @@
             android:text="Jenis Kelamin"
             />
         <EditText
-            android:id="@+id/det_jk"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_person_black_24dp"
@@ -111,7 +106,6 @@
             android:text="Alamat"
             />
         <EditText
-            android:id="@+id/det_alamat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_place_black_24dp"
