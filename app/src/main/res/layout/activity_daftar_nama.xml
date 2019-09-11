@@ -14,15 +14,17 @@
         ></android.support.v7.widget.RecyclerView>
 
     <ImageButton
+        android:onClick="inputData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="20dp"
         android:layout_toLeftOf="@id/tv_input"
         android:background="@color/colorKrem"
-        android:src="@drawable/ic_person_black_24dp" />
+        android:src="@drawable/ic_person_red_24dp" />
 
     <TextView
+        android:onClick="inputData"
         android:id="@+id/tv_input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -31,7 +33,7 @@
         android:layout_margin="20dp"
         android:text="INPUT DATA"
         android:textColor="#B22222"
-        android:textSize="15dp" />
+        android:textSize="20dp" />
 
 
 </RelativeLayout>
