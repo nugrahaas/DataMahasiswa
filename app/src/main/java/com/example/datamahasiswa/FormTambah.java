@@ -64,7 +64,7 @@ public class FormTambah extends AppCompatActivity {
         DatabaseHelper db = new DatabaseHelper(this);
         Mahasiswa currentMahasiswa = new Mahasiswa ();
 
-        if(getIntent().hasExtra("Update")) {
+        if(!getIntent().hasExtra("Update")) {
             currentMahasiswa.setNomor(Integer.parseInt(nomor.getText().toString()));
             currentMahasiswa.setNama (nama.getText().toString ());
             currentMahasiswa.setAlamat (alamat.getText().toString ());
